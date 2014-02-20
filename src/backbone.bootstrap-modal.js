@@ -1,4 +1,7 @@
 /**
+ * GJ: quick hack based on https://github.com/powmedia/backbone.bootstrap-modal/pull/54
+ * desc: clicking on backdrop doesn't remove modal
+ * 
  * Bootstrap Modal wrapper for use with Backbone.
  *
  * Takes care of instantiation, manages multiple modals,
