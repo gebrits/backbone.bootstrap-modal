@@ -4,7 +4,7 @@
  * - quick hack based on https://github.com/powmedia/backbone.bootstrap-modal/pull/54
  * desc: clicking on backdrop doesn't remove modal
  *
- * - option showBackdrop: true | false
+ * - option modal: true | false
  * -------------
  *
  * Bootstrap Modal wrapper for use with Backbone.
@@ -138,7 +138,7 @@
          * @param {Boolean} [options.animate]         Whether to animate in/out. Default: false
          * @param {Function} [options.template]       Compiled underscore template to override the default one
          * @param {Boolean} [options.enterTriggersOk] Whether the 'enter' key will trigger OK. Default: false
-         * @param {Boolean} [options.showBackdrop] Whether backdrop will be shown. Default: true
+         * @param {Boolean} [options.modal] Whether backdrop will be shown. Default: true
          */
         initialize: function(options) {
             this.options = _.extend({
@@ -153,7 +153,7 @@
                 animate: false,
                 template: template,
                 enterTriggersOk: false,
-                showBackdrop: true,
+                modal: true,
             }, options);
         },
 
@@ -199,7 +199,7 @@
             //Create it
             $el.modal(_.extend({
                 keyboard: this.options.allowCancel,
-                backdrop: this.options.showBackdrop ? (this.options.allowCancel ? true : 'static') : false
+                backdrop: this.options.modal ? (this.options.allowCancel ? true : 'static') : false
             }, this.options.modalOptions));
 
             //Focus OK button
